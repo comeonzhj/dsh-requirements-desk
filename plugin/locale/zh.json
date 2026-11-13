@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "需求台",
+    "description": "把飞书多维表里的多来源需求变成可筛选、可评审、可生成 PRD 并一键交给 Agent 的产品工作台。",
+    "detail": "docs/DETAIL.md"
+  }
+}

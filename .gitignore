@@ -1,0 +1,5 @@
+.build/
+plugin/data/requirements.cache.json
+.DS_Store
+*.log
+docs/本地配置.md

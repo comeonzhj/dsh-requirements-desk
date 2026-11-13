@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Requirements desk",
+    "description": "Turn a multi-source Feishu Bitable demand pool into a triage, review and PRD workbench that hands selected evidence to an Agent.",
+    "detail": "docs/DETAIL.md"
+  }
+}

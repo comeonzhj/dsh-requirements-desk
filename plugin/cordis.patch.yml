@@ -1,0 +1,9 @@
+- insert:
+    - id: requirements-desk
+      name: '@local/requirements-desk'
+      config:
+        baseToken: ""
+        tableId: ""
+        baseUrl: ""
+        tableName: 需求池
+        cliPath: ""

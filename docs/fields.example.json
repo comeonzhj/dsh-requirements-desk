@@ -1,0 +1,387 @@
+[
+ {
+  "name": "需求ID",
+  "type": "text"
+ },
+ {
+  "name": "需求标题",
+  "type": "text"
+ },
+ {
+  "name": "来源类型",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "B 端企业"
+   },
+   {
+    "name": "C 端用户"
+   },
+   {
+    "name": "内部同事"
+   }
+  ]
+ },
+ {
+  "name": "来源",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "客服工单"
+   },
+   {
+    "name": "销售转述"
+   },
+   {
+    "name": "应用市场评价"
+   },
+   {
+    "name": "C 端表单"
+   },
+   {
+    "name": "用户访谈"
+   },
+   {
+    "name": "内部反馈"
+   },
+   {
+    "name": "客户成功回访"
+   },
+   {
+    "name": "社区反馈"
+   }
+  ]
+ },
+ {
+  "name": "提出方",
+  "type": "text"
+ },
+ {
+  "name": "部门",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "产品部"
+   },
+   {
+    "name": "设计部"
+   },
+   {
+    "name": "研发部"
+   },
+   {
+    "name": "市场部"
+   },
+   {
+    "name": "销售部"
+   },
+   {
+    "name": "客服部"
+   },
+   {
+    "name": "运营部"
+   },
+   {
+    "name": "安全合规"
+   },
+   {
+    "name": "客户成功"
+   },
+   {
+    "name": "企业客户"
+   },
+   {
+    "name": "C 端用户"
+   },
+   {
+    "name": "开发者社区"
+   }
+  ]
+ },
+ {
+  "name": "角色",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "产品经理"
+   },
+   {
+    "name": "设计师"
+   },
+   {
+    "name": "研发"
+   },
+   {
+    "name": "企业管理员"
+   },
+   {
+    "name": "运营"
+   },
+   {
+    "name": "销售"
+   },
+   {
+    "name": "客服"
+   },
+   {
+    "name": "终端用户"
+   },
+   {
+    "name": "合规负责人"
+   },
+   {
+    "name": "采购负责人"
+   }
+  ]
+ },
+ {
+  "name": "客户分层",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "战略客户"
+   },
+   {
+    "name": "付费客户"
+   },
+   {
+    "name": "中小客户"
+   },
+   {
+    "name": "免费用户"
+   },
+   {
+    "name": "内部团队"
+   }
+  ]
+ },
+ {
+  "name": "模块",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "会话与任务"
+   },
+   {
+    "name": "知识库"
+   },
+   {
+    "name": "技能与插件"
+   },
+   {
+    "name": "协作共享"
+   },
+   {
+    "name": "客户端体验"
+   },
+   {
+    "name": "开放平台"
+   },
+   {
+    "name": "计费与权限"
+   },
+   {
+    "name": "模型能力"
+   },
+   {
+    "name": "模板与工作流"
+   }
+  ]
+ },
+ {
+  "name": "需求类型",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "新功能"
+   },
+   {
+    "name": "体验优化"
+   },
+   {
+    "name": "效率工具"
+   },
+   {
+    "name": "稳定性"
+   },
+   {
+    "name": "合规安全"
+   },
+   {
+    "name": "生态开放"
+   }
+  ]
+ },
+ {
+  "name": "场景",
+  "type": "text"
+ },
+ {
+  "name": "痛点",
+  "type": "text"
+ },
+ {
+  "name": "原话",
+  "type": "text"
+ },
+ {
+  "name": "优先级",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "P0"
+   },
+   {
+    "name": "P1"
+   },
+   {
+    "name": "P2"
+   },
+   {
+    "name": "P3"
+   }
+  ]
+ },
+ {
+  "name": "状态",
+  "type": "select",
+  "multiple": false,
+  "options": [
+   {
+    "name": "待评估"
+   },
+   {
+    "name": "评估中"
+   },
+   {
+    "name": "已排期"
+   },
+   {
+    "name": "开发中"
+   },
+   {
+    "name": "已上线"
+   },
+   {
+    "name": "已搁置"
+   }
+  ]
+ },
+ {
+  "name": "影响人数",
+  "type": "number",
+  "style": {
+   "type": "plain",
+   "precision": 0
+  }
+ },
+ {
+  "name": "商业价值",
+  "type": "number",
+  "style": {
+   "type": "plain",
+   "precision": 0
+  }
+ },
+ {
+  "name": "战略契合",
+  "type": "number",
+  "style": {
+   "type": "plain",
+   "precision": 0
+  }
+ },
+ {
+  "name": "实现成本",
+  "type": "number",
+  "style": {
+   "type": "plain",
+   "precision": 0
+  }
+ },
+ {
+  "name": "置信度",
+  "type": "number",
+  "style": {
+   "type": "plain",
+   "precision": 0
+  }
+ },
+ {
+  "name": "紧急度",
+  "type": "number",
+  "style": {
+   "type": "plain",
+   "precision": 0
+  }
+ },
+ {
+  "name": "标签",
+  "type": "select",
+  "multiple": true,
+  "options": [
+   {
+    "name": "高频"
+   },
+   {
+    "name": "付费客户"
+   },
+   {
+    "name": "战略客户"
+   },
+   {
+    "name": "合规"
+   },
+   {
+    "name": "性能"
+   },
+   {
+    "name": "易用性"
+   },
+   {
+    "name": "生态"
+   },
+   {
+    "name": "权限"
+   },
+   {
+    "name": "设计系统"
+   },
+   {
+    "name": "内部效率"
+   },
+   {
+    "name": "商业化"
+   },
+   {
+    "name": "自动化"
+   },
+   {
+    "name": "数据"
+   },
+   {
+    "name": "安全"
+   }
+  ]
+ },
+ {
+  "name": "提交日期",
+  "type": "datetime"
+ },
+ {
+  "name": "补充说明",
+  "type": "text"
+ },
+ {
+  "name": "PM 结论",
+  "type": "text"
+ }
+]
