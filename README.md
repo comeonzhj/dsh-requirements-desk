@@ -17,7 +17,7 @@
 2. 左侧边栏找到 **需求台** 图标（在「插件」和「录音套件」之间，order 26）。
 3. 点击进入。页面会加载内置快照；点右上角「同步飞书」读取最新 Base 数据。
 
-> 插件已安装到 `desktop` profile：`@local/requirements-desk`，`application: applied`。如果页面未出现，刷新 DSH 页面或重启应用。
+> 本机 demo 已安装到 `desktop` profile：`@local/requirements-desk`，`application: applied`。其他环境按第 5 节安装；页面未出现时刷新 DSH 页面或重启应用。
 
 ---
 
@@ -79,15 +79,12 @@ score = round(100 * (
 
 ## 5. 安装 / 重装
 
-本机已安装。其他环境：
-
 ```bash
 # 方式一：Plugin Manager（推荐）
-# 在 DSH Plugins > Add plugin 选择目录：
-/Users/jia/Downloads/codes/Interactive-Platform/需求台-demo/plugin
+# 在 DSH Plugins > Add plugin 选择本仓库的 plugin/ 目录
 
 # 方式二：如果可用 plugin_manager 工具
-# action: install_bundle, target: <上面的绝对路径>
+# action: install_bundle, target: <本仓库>/plugin
 ```
 
 `plugin/cordis.patch.yml` 里的 `cliPath` 默认留空，按 PATH 查找 `lark-cli`。如果同步失败，把它改成 `which lark-cli` 的绝对路径，或设置 `LARK_CLI` 环境变量。
@@ -97,7 +94,7 @@ score = round(100 * (
 ```bash
 node --check plugin/client.js
 node --check plugin/server.mjs
-curl -s http://127.0.0.1:58115/api/requirements-desk/state | head -c 400
+curl -s "${DSH_WEB_URL:-http://127.0.0.1:3000}/api/requirements-desk/state" | head -c 400
 ```
 
 ---
@@ -110,7 +107,10 @@ curl -s http://127.0.0.1:58115/api/requirements-desk/state | head -c 400
 ├── docs/
 │   ├── 迁移能力清单.md        # WorkBuddy 能力 → DSH 映射
 │   ├── 产品经理工作台场景.md   # 6 个可插件化场景 + 架构
-│   └── 飞书数据源.md          # Base 结构、命令、数据链路
+│   ├── 飞书数据源.md          # Base 结构、命令、数据链路
+│   ├── 接入自己的飞书.md      # 从零创建/连接自己的 Base
+│   ├── fields.example.json    # 25 个字段的建表示例
+│   └── screenshots/           # 代码渲染的界面示意
 └── plugin/
     ├── package.json           # DSH bundle 元数据
     ├── cordis.patch.yml       # 插入 requirements-desk 行 + Base 配置
@@ -121,7 +121,7 @@ curl -s http://127.0.0.1:58115/api/requirements-desk/state | head -c 400
     ├── locale/{zh,en}.json    # 插件元数据
     ├── docs/DETAIL.md         # 插件详情页
     └── data/
-        └── requirements.snapshot.json  # 22 条真实 Base 记录快照
+        └── requirements.snapshot.json  # 22 条虚构需求快照（无凭据）
 ```
 
 ---
@@ -135,7 +135,7 @@ curl -s http://127.0.0.1:58115/api/requirements-desk/state | head -c 400
 | `main` / `sidebar.panellist` occupant | `requirements-desk`，`active: true` |
 | `GET /api/requirements-desk/state` | 200，22 条 |
 | `POST /sync` | 成功，22 条，<1s |
-| `POST /update` | 成功写回 `WB-2026-019` |
+| `POST /update` | 本机验证：成功写回 `WB-2026-019` |
 | 视觉检查 | **未执行**：本机 `screencapture` 无屏幕录制权限，且 DSH Web URL 需要一次性 token；请在 GUI 内人工确认布局/明暗主题 |
 
 > 按 DSH 插件验证规范，安装与 slot 注册不等于“用户看到的正确”。这里明确记录：**页面视觉与交互需在 GUI 中人工验收**。
