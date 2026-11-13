@@ -9,6 +9,8 @@
 
 这不是一个静态 HTML 页面，而是一个 DSH 插件页：左侧边栏入口 + `main` slot 页面 + Host 数据桥。
 
+安全说明见 [SECURITY.md](SECURITY.md)。
+
 ---
 
 ## 1. 快速打开
