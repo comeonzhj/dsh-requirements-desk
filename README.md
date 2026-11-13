@@ -59,7 +59,7 @@ score = round(100 * (
 
 ## 4. 飞书数据源
 
-仓库自带 22 条虚构需求快照，不包含任何人的飞书 Base Token、App ID 或 App Secret。
+仓库自带 22 条虚构需求快照，不包含任何人的飞书 Base Token、App ID 或 App Secret。示例里的公司、人名、原话均为虚构。
 
 连接自己的 Base：
 
