@@ -73,7 +73,7 @@ score = round(100 * (
 | Table ID | 从 `?table=` 后面取，`tbl` 开头 |
 | 身份 | `lark-cli --as user` |
 
-把 `baseToken`、`tableId`、`baseUrl` 填进 `plugin/cordis.patch.yml`，或用环境变量/自己的 Host 配置覆盖。完整步骤见 [接入自己的飞书](docs/接入自己的飞书.md) 和 [飞书数据源](docs/飞书数据源.md)。
+把 `baseToken`、`tableId`、`baseUrl` 填进 `plugin/data/local-config.json`（从 `local-config.example.json` 复制），或直接改 `plugin/cordis.patch.yml`。`local-config.json` 已在 `.gitignore` 里。完整步骤见 [接入自己的飞书](docs/接入自己的飞书.md) 和 [飞书数据源](docs/飞书数据源.md)。
 
 > 本插件不使用 App Secret。`lark-cli` 用户身份已经能读写 Base；Secret 不应进前端、仓库或截图。
 
@@ -89,7 +89,7 @@ score = round(100 * (
 # action: install_bundle, target: <本仓库>/plugin
 ```
 
-`plugin/cordis.patch.yml` 里的 `cliPath` 默认留空，按 PATH 查找 `lark-cli`。如果同步失败，把它改成 `which lark-cli` 的绝对路径，或设置 `LARK_CLI` 环境变量。
+`plugin/data/local-config.json` 或 `plugin/cordis.patch.yml` 里的 `cliPath` 默认留空，按 PATH 查找 `lark-cli`。如果同步失败，把它改成 `which lark-cli` 的绝对路径，或设置 `LARK_CLI` 环境变量。
 
 安装后检查：
 

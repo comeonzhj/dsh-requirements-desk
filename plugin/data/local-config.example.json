@@ -1,0 +1,7 @@
+{
+  "baseToken": "<your-base-token>",
+  "tableId": "<your-table-id>",
+  "baseUrl": "https://<your-domain>.feishu.cn/base/<base_token>?table=<table_id>",
+  "tableName": "需求池",
+  "cliPath": ""
+}

@@ -10,6 +10,7 @@
  * existing `lark-cli` authorization, so the Base stays a normal user resource.
  */
 import { execFile } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import { promises as fs } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
@@ -20,6 +21,7 @@ const execFileAsync = promisify(execFile)
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const SNAPSHOT_FILE = path.join(HERE, 'data', 'requirements.snapshot.json')
 const CACHE_FILE = path.join(HERE, 'data', 'requirements.cache.json')
+const LOCAL_CONFIG_FILE = path.join(HERE, 'data', 'local-config.json')
 
 const DEFAULTS = {
   baseToken: '',
@@ -263,8 +265,17 @@ function routePath(req) {
   }
 }
 
+function readLocalConfig() {
+  try {
+    return JSON.parse(readFileSync(LOCAL_CONFIG_FILE, 'utf8'))
+  } catch {
+    return {}
+  }
+}
+
 export function applyRequirementsDesk(ctx, rawConfig = {}) {
-  const config = { ...DEFAULTS, ...rawConfig }
+  // local-config.json is gitignored: it holds this machine's Base token/CLI path.
+  const config = { ...DEFAULTS, ...rawConfig, ...readLocalConfig() }
   const cli = resolveCli(config.cliPath)
   const logger = ctx.logger ?? console
 
